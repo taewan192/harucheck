@@ -4,7 +4,7 @@ import { Script } from 'node:vm';
 
 const root = new URL('../', import.meta.url);
 const read = path => readFile(new URL(path, root), 'utf8');
-const sourceNames = ['theme-init.js', 'styles.css', 'reminder-core.js', 'app.js'];
+const sourceNames = ['theme-init.js', 'styles.css', 'reminder-core.js', 'i18n.js', 'alert-media.js', 'app.js'];
 let html = await read('src/template.html');
 
 for (const name of sourceNames) {

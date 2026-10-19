@@ -65,3 +65,53 @@ dialog{padding:0;border:0;background:white;color:var(--ink);border-radius:27px;w
 .alarm-top{display:flex;align-items:center;justify-content:space-between;gap:8px}.alarm-top h2{font-size:17px;margin:0}.alarm-top button{min-height:44px;padding:8px;font-size:13px;color:var(--muted)}
 .alarm-item{display:flex;gap:12px;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding:14px 0 0;margin-top:10px}
 .alarm-copy{min-width:0;flex:1;overflow-wrap:anywhere}.alarm-copy strong{font-size:15px}.alarm-copy p{font-size:12px;line-height:1.6;color:var(--muted);margin:5px 0 0}.alarm-view{flex:none;border-radius:10px;min-height:44px;padding:8px 12px;background:var(--lime);color:var(--accent-ink);font-size:13px;font-weight:600}
+
+/* Mobile calendar: keep the day grid compact and the primary action in reach. */
+.day-more{display:none}
+@media(max-width:759px){
+ .app{max-width:520px;padding:20px 16px calc(108px + env(safe-area-inset-bottom));min-height:100dvh}
+ .topbar{flex-wrap:nowrap;gap:12px;margin-bottom:20px}
+ .brand{gap:10px}.brand h1{font-size:20px;line-height:1.4}.brand p{font-size:9px;letter-spacing:1.1px}
+ .header-actions{width:auto;flex:none}.theme-switch{padding:3px;border-radius:16px;gap:2px}
+ .theme-switch button{width:44px;height:44px;min-height:44px;padding:12px;font-size:0;gap:0;border-radius:12px}
+ .theme-switch button svg{width:20px;height:20px}
+ .workspace{gap:24px}.calendar{padding:14px 8px 16px;border-radius:24px;border:1px solid var(--line)}
+ .calendar-head{padding:0 8px}.year-control{min-height:32px;font-size:12px}.month-heading{font-size:30px;line-height:1.3}
+ .month-nav{gap:0}.today-btn{height:44px;padding:0 12px;font-size:13px}
+ .weekdays{margin-top:16px;height:28px;font-size:11px;align-items:center}
+ .days{grid-auto-rows:minmax(48px,auto);gap:0}
+ .day{min-height:48px;padding:5px 2px 7px;gap:4px;border-top:0;border-radius:12px}
+ .day .number{width:30px;min-width:30px;height:30px;line-height:30px;border-radius:10px;font-size:13px}
+ .day-labels{gap:3px}.event-label{display:flex;align-items:center;padding:2px 3px;font-size:10px;line-height:15px;min-height:19px;border-width:0;border-radius:4px;box-shadow:none;white-space:nowrap}
+ .event-label .label-status{font-size:10px;flex:none}.event-title{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ .event-label:nth-child(n+3){display:none}.day-more{display:block;font-size:9px;font-weight:600;color:var(--muted);line-height:14px;text-align:center}
+ .calendar-footer{padding-top:12px;margin:12px 8px 0;font-size:11px}.legend{gap:10px}.legend i{width:6px;height:6px;border-radius:2px}
+ .agenda{padding:0 2px;min-width:0}.date-eyebrow{font-size:10px;letter-spacing:1.5px;margin-bottom:6px}.agenda h2{font-size:22px}
+ .agenda-head{margin-bottom:16px}.count-pill{font-size:11px;padding:6px 8px}.day-badge{font-size:10px;padding:4px 7px;margin-left:7px}
+ .empty{min-height:156px;border-style:solid;background:var(--paper);border-radius:22px;padding:20px 12px}
+ .empty-mark{width:40px;height:40px;background:var(--surface-soft);border-radius:14px;margin-bottom:10px}.empty-mark svg{width:22px;height:22px}
+ .empty h3{font-size:15px}.empty p{font-size:12px}.task{padding:16px;border:1px solid var(--line);border-radius:20px}.task-title{font-size:15px}
+ .add-btn{position:fixed;bottom:calc(16px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);width:calc(100% - 32px);max-width:488px;min-height:56px;margin:0;border:1px solid #a5c944;border-radius:18px;box-shadow:0 6px 24px #10172226;z-index:3}
+ .storage-note{font-size:10px;margin-top:18px}.toast{bottom:calc(88px + env(safe-area-inset-bottom));font-size:13px}
+ dialog:not(.delete-dialog){width:100%;max-width:520px;max-height:92dvh;margin:auto auto 0;border-radius:28px 28px 0 0;overscroll-behavior:contain}
+ .sheet-inner{padding:24px 20px max(24px,env(safe-area-inset-bottom))}.sheet-top{margin-bottom:16px}.sheet-top h2{font-size:21px}
+ .field{margin-top:18px}.field input,.field select{font-size:16px}.field input::placeholder{font-size:14px}
+ .form-row{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:10px}.form-footer{position:sticky;bottom:0;padding:12px 0 0;background:var(--paper);margin-top:12px;z-index:1}
+ .form-footer button{min-height:54px}.notification-settings summary{min-height:48px}
+}
+@media(max-width:359px){.app{padding-left:12px;padding-right:12px}.brand p{font-size:8px;letter-spacing:.5px}.brand h1{font-size:18px}.brandmark{width:32px;height:32px}.topbar{gap:8px}.theme-switch button{width:40px}.form-row{grid-template-columns:minmax(0,1fr)}.legend{gap:7px}}
+
+/* Settings, permission onboarding, and per-event alert preferences. */
+.settings-button{display:flex;align-items:center;justify-content:center;gap:7px;min-height:48px;padding:10px 14px;border:1px solid var(--line);border-radius:16px;background:var(--paper);font-size:13px;font-weight:600;flex:none}
+.settings-button svg{width:21px;height:21px}.settings-label{font-size:13px;margin:6px 0 12px}.settings-theme button{flex:1;width:auto;min-height:48px;font-size:14px;gap:7px;padding:10px 16px}.settings-theme{width:100%}
+.settings-permission{margin-top:24px;padding-top:18px;border-top:1px solid var(--line)}.settings-permission p{font-size:12px;line-height:1.7;color:var(--muted)}.settings-permission button{width:100%;font-size:13px}.settings-done{width:100%;margin-top:24px}
+.permission-gate{margin:30px auto 0;max-width:460px;padding:32px 24px;background:var(--paper);border:1px solid var(--line);border-radius:28px;text-align:center}
+.permission-icon{height:64px;width:64px;border-radius:22px;background:var(--lime);color:#202a35;display:grid;place-items:center;margin:0 auto 24px}.permission-icon svg{width:30px;height:30px}
+.permission-gate h2{font-size:24px;line-height:1.4;letter-spacing:-.6px;margin:0 0 16px}.permission-gate p{font-size:14px;color:var(--muted);line-height:1.8;margin:12px 0 20px;overflow-wrap:anywhere}.permission-gate button{width:100%;margin-top:12px;white-space:normal}.permission-gate #permission-reason:empty{display:none}
+.alert-preferences{border:1px solid var(--line);border-radius:18px;padding:0 14px 14px;margin:20px 0 14px;min-width:0;background:var(--field-bg)}.alert-preferences.is-disabled{opacity:.5}.toggle-row{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px;font-size:14px;font-weight:600;cursor:pointer}
+.toggle-row input{appearance:none;flex:none;width:44px;height:26px;margin:0;border:1px solid var(--line);border-radius:20px;background:var(--surface-soft);position:relative;cursor:pointer}.toggle-row input:before{content:'';position:absolute;width:18px;height:18px;left:3px;top:3px;border-radius:50%;background:var(--muted)}.toggle-row input:checked{background:var(--lime);border-color:#a5c944}.toggle-row input:checked:before{transform:translateX(18px);background:#202a35}
+.field-help{font-size:12px;color:var(--muted);line-height:1.75;margin:10px 0;overflow-wrap:anywhere}.sound-name{font-size:13px;line-height:1.6;margin:8px 0 12px;overflow-wrap:anywhere}.file-picker{display:flex;align-items:center;justify-content:center;position:relative;min-height:48px;border:1px solid var(--line);border-radius:12px;background:var(--paper);padding:12px;font-size:13px;font-weight:600;cursor:pointer;text-align:center}.file-picker input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}.file-picker:focus-within{outline:3px solid #719343;outline-offset:3px}
+.text-button{color:var(--green);font-size:12px;min-height:44px;padding:8px 0;text-decoration:underline;text-underline-offset:4px}.audio-actions{display:flex;gap:8px;flex-wrap:wrap}.audio-actions button{flex:1;min-width:70px;font-size:12px;padding:12px}.audio-actions button:first-child{flex:2}
+.segments label>span>span{min-height:0;display:inline;font-size:inherit;color:inherit;box-shadow:none;background:none;padding:0}
+.calendar-head>div:first-child{min-width:0;flex:1}.month-heading{overflow-wrap:anywhere}.calendar-footer,.legend,.task-bottom{flex-wrap:wrap}.alarm-top{flex-wrap:wrap}.alarm-top h2{flex:1}.month-grid button{padding:8px 4px;overflow-wrap:anywhere}.form-status legend{font-size:13px}
+@media(max-width:759px){.settings-button{padding:10px 12px}.settings-theme button{width:auto;height:auto;font-size:14px;gap:7px;padding:10px}.settings-theme button svg{width:18px;height:18px}.permission-gate{margin-top:24px;padding:28px 20px}.permission-gate h2{font-size:22px}.permission-gate p{font-size:13px}.app:has(#permission-gate:not(.hidden)){padding-bottom:24px}.calendar-footer{row-gap:10px}.legend{gap:8px}.month-heading{font-size:clamp(21px,6.7vw,30px)}.agenda-head{align-items:flex-start}.agenda h2{font-size:20px}.count-pill{flex:none}.day-badge{display:inline-block;margin-top:4px}.date-eyebrow{letter-spacing:.5px}.alert-preferences{padding-left:12px;padding-right:12px}.task-bottom{row-gap:12px}.status-actions{margin-left:auto}.sound-name{font-size:12px}}

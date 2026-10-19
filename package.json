@@ -3,11 +3,17 @@
   "version": "1.0.0",
   "private": true,
   "description": "2026–2027 하루 일정을 기록하고 완료·실패를 확인하는 모바일 캘린더",
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "build": "node scripts/build.mjs",
     "start": "node scripts/start.mjs",
     "test": "node scripts/build.mjs --check && node --test",
     "design:svg": "python scripts/make_figma_board.py"
+  },
+  "devDependencies": {
+    "fake-indexeddb": "^6.2.6",
+    "jsdom": "^26.1.0"
   }
 }
